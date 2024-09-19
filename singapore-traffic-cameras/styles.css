@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 300px;
+    padding: 20px;
+    background-color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+h1, h2 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#camera-selection {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#camera-dropdown {
+    flex-grow: 1;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    padding: 5px;
+    min-height: 200px;
+}
+
+#camera-dropdown option {
+    padding: 5px;
+}
+
+#camera-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.camera-feed {
+    width: calc(50% - 10px);
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.camera-feed img {
+    width: 100%;
+    height: auto;
+}
+
+.camera-metadata {
+    margin-top: 10px;
+}
+
+.camera-metadata p {
+    margin: 5px 0;
+    color: #b0b0b0;
+}
+
+@media (max-width: 1200px) {
+    .camera-feed {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .main-content {
+        height: calc(100vh - 300px);
+    }
+
+    #camera-dropdown {
+        height: 200px;
+    }
+}
