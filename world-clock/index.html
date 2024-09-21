@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Clock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>World Clock</h1>
+        <div class="mode-toggle">
+            <label for="modeToggle">Auto Update</label>
+            <input type="checkbox" id="modeToggle" checked>
+        </div>
+        <div id="customTimeContainer" style="display: none;">
+            <div class="input-section">
+                <input type="datetime-local" id="inputTime" required>
+                <select id="inputTimezone">
+                    <option value="UTC">UTC</option>
+                    <!-- Other timezone options will be populated by JavaScript -->
+                </select>
+                <button id="setTime">Set Time</button>
+            </div>
+        </div>
+        <div class="city-picker">
+            <select id="citySelect">
+                <!-- City options will be populated by JavaScript -->
+            </select>
+            <button id="addCity">Add City</button>
+        </div>
+        <div id="clocksContainer"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
