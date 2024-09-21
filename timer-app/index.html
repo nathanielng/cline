@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Countdown Timer</h1>
+        <div id="timer">00:00:00</div>
+        <div class="controls">
+            <input type="number" id="hours" placeholder="Hours" min="0" max="23">
+            <input type="number" id="minutes" placeholder="Minutes" min="0" max="59">
+            <input type="number" id="seconds" placeholder="Seconds" min="0" max="59">
+            <button id="startBtn"><i class="fas fa-play"></i></button>
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div class="presets">
+            <button id="preset1Min" class="preset-btn">1m</button>
+            <button id="preset5Min" class="preset-btn">5m</button>
+            <button id="preset10Min" class="preset-btn">10m</button>
+            <button id="preset1Hour" class="preset-btn">1h</button>
+            <button id="pomodoroBtn" class="preset-btn">Pomodoro (25m)</button>
+        </div>
+        <div class="sound-options">
+            <label for="sound-select">Choose a sound:</label>
+            <select id="sound-select">
+                <option value="none">No Sound</option>
+                <option value="beep" selected>Beep</option>
+                <option value="arpeggio">Arpeggio</option>
+                <option value="melody">Melody</option>
+                <option value="chime">Chime</option>
+            </select>
+            <button id="testSoundBtn">Test Sound</button>
+        </div>
+    </div>
+    <footer>
+        Created with Claude Dev with Bedrock/Claude 3.5 Sonnet
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
