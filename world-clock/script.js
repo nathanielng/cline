@@ -8,6 +8,7 @@ const cities = [
     { name: "London", timezone: "Europe/London", country: "GB" },
     { name: "Manila", timezone: "Asia/Manila", country: "PH" },
     { name: "Moscow", timezone: "Europe/Moscow", country: "RU" },
+    { name: "New Delhi", timezone: "Asia/Kolkata", country: "IN" },
     { name: "New York", timezone: "America/New_York", country: "US" },
     { name: "Paris", timezone: "Europe/Paris", country: "FR" },
     { name: "Seattle", timezone: "America/Los_Angeles", country: "US" },
@@ -27,6 +28,8 @@ const customTimeContainer = document.getElementById('customTimeContainer');
 
 let selectedCities = [];
 let isAutoMode = true;
+let autoInterval;
+let customInterval;
 
 // Populate city select options
 cities.forEach(city => {
@@ -80,7 +83,7 @@ function createClock(city) {
             <img src="https://flagcdn.com/w20/${city.country.toLowerCase()}.png" alt="${city.name} flag" class="country-flag">
             <h2>${city.name}</h2>
         </div>
-        <p class="time"></p>
+        <p class="time">⏰ <span class="time-value"></span></p>
         <p class="offset"></p>
         <p class="dst"></p>
         <button class="remove-btn" data-timezone="${city.timezone}">&times;</button>
@@ -106,7 +109,7 @@ function updateClocks() {
 
     selectedCities.forEach(cityTz => {
         const clockElement = clocksContainer.querySelector(`[data-timezone="${cityTz}"]`).closest('.clock');
-        const timeElement = clockElement.querySelector('.time');
+        const timeElement = clockElement.querySelector('.time-value');
         const offsetElement = clockElement.querySelector('.offset');
         const dstElement = clockElement.querySelector('.dst');
 
@@ -169,12 +172,12 @@ function updateInputTime() {
 function toggleMode() {
     isAutoMode = modeToggle.checked;
     customTimeContainer.style.display = isAutoMode ? 'none' : 'block';
+    clearInterval(autoInterval);
+    clearInterval(customInterval);
     if (isAutoMode) {
-        clearInterval(customInterval);
         autoUpdate();
     } else {
-        clearInterval(autoInterval);
-        updateClocks();
+        customUpdate();
     }
 }
 
