@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Typing Animation</title>
+    <link rel="stylesheet" href="word-typing-animation.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="highlightColorPicker">Highlight Color:</label>
+                    <input type="color" id="highlightColorPicker" value="#00ff00">
+                </div>
+                <div class="control-group">
+                    <label for="textColorPicker">Text Color:</label>
+                    <input type="color" id="textColorPicker" value="#ffffff">
+                </div>
+                <div class="control-group">
+                    <label for="fontSelector">Font:</label>
+                    <select id="fontSelector">
+                        <option value="Arial, sans-serif">Arial</option>
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="'Times New Roman', serif">Times New Roman</option>
+                        <option value="'Courier New', monospace">Courier New</option>
+                        <option value="Verdana, sans-serif">Verdana</option>
+                        <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                        <option value="Impact, sans-serif">Impact</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="fontSizeSelector">Size:</label>
+                    <select id="fontSizeSelector">
+                        <option value="0.875rem">Small</option>
+                        <option value="1rem" selected>Medium</option>
+                        <option value="1.25rem">Large</option>
+                        <option value="1.5rem">X-Large</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="fontStyleSelector">Style:</label>
+                    <select id="fontStyleSelector">
+                        <option value="normal">Regular</option>
+                        <option value="bold">Bold</option>
+                        <option value="italic">Italic</option>
+                        <option value="bold italic">Bold Italic</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="speedControl">Speed:</label>
+                    <input type="range" id="speedControl" min="50" max="500" value="200">
+                    <span id="speedValue">200ms</span>
+                </div>
+                <button id="startButton">Start Animation</button>
+                <button id="resetButton">Reset</button>
+            </div>
+        </div>
+        <div class="display-section">
+            <div id="animationDisplay"></div>
+        </div>
+    </div>
+    <script src="word-typing-animation.js"></script>
+</body>
+</html>
