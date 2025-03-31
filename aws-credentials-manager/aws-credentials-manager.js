@@ -85,26 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to load credentials from local storage
     function loadCredentials() {
-        if (accessKey || secretKey || sessionToken) {
-            // Update display elements
-            accessKeyDisplay.textContent = accessKey || '-';
-            secretKeyDisplay.textContent = secretKey || '-';
-            sessionTokenDisplay.textContent = sessionToken || '-';
-            
-            // Show credentials display and update status
-            credentialsDisplay.classList.remove('hidden');
-            statusElement.textContent = 'Credentials loaded from local storage';
-            statusElement.classList.remove('text-gray-400');
-            statusElement.classList.add('text-green-400');
-        } else {
-            // Hide credentials display and update status
-            credentialsDisplay.classList.add('hidden');
-            statusElement.textContent = 'No credentials stored yet';
-            statusElement.classList.remove('text-green-400');
-            statusElement.classList.add('text-gray-400');
-        }
-    }
-    function loadCredentials() {
         const accessKey = localStorage.getItem('AWS_ACCESS_KEY_ID');
         const secretKey = localStorage.getItem('AWS_SECRET_ACCESS_KEY');
         const sessionToken = localStorage.getItem('AWS_SESSION_TOKEN');
